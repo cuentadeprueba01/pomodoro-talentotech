@@ -8,8 +8,8 @@ class Window(Tk):
         super().__init__()
 
         self.title("Pomodoro App")
-        self.geometry("400x300")
-        self.config(padx=100, pady=50, bg=YELLOW)
+        self.geometry("450x420")
+        self.config(bg=YELLOW)
 
         self.container = Frame(self)
         self.container.pack(fill="both", expand=True)
@@ -34,7 +34,8 @@ class Window(Tk):
             view.pack()
 
     def add_view(self, view, name):
-        frame = view(self.container, self)
+        frame: Frame = view(self.container, self)
 
         self.frames[name] = frame
         frame.pack(fill="both", expand=True)
+        frame.config(bg=YELLOW)
