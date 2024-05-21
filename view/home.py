@@ -72,21 +72,21 @@ class Home(Frame):
     def start_timer(self):
         self.reps += 1
 
-        long_break_seg = LONG_BREAK_MIN * 60
-        short_break_seg = SHORT_BREAK_MIN * 60
-        work_seg = WORK_MIN * 6
+        work_sec = WORK_MIN * 60
+        short_break_sec = SHORT_BREAK_MIN * 60
+        long_break_sec = LONG_BREAK_MIN * 60
 
-        if self.reps % 8:
-            self.count_dow(long_break_seg)
-            self.title_label.config(text="Break", foreground=RED)
-        elif self.reps % 2:
-            self.count_dow(short_break_seg)
-            self.title_label.config(text="Break", foreground=PINK)
+        if self.reps % 8 == 0:
+            self.count_down(long_break_sec)
+            self.title_label.config(text="Break", fg=RED)
+        elif self.reps % 2 == 0:
+            self.count_down(short_break_sec)
+            self.title_label.config(text="Break", fg="pink")
         else:
-            self.count_dow(work_seg)
-            self.title_label.config(text="Work", foreground=GREEN)
+            self.count_down(work_sec)
+            self.title_label.config(text="Work", fg=GREEN)
 
-    def count_dow(self, count: int):
+    def count_down(self, count: int):
         count_min = count // 60
         count_seg = count % 60
 
@@ -96,7 +96,7 @@ class Home(Frame):
         self.timer_label.config(text=f"{count_min}:{count_seg}")
 
         if count > 0:
-            self.timer = self.after(1000, self.count_dow, count - 1)
+            self.timer = self.after(1000, self.count_down, count - 1)
         else:
             self.start_timer()
 
