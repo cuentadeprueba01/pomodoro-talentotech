@@ -48,10 +48,10 @@ git push origin main
 
 ## Lista de tareas
 
-[x] Crear la estructura basica del proyecto
+- [x] Crear la estructura basica del proyecto
 
-- [x] Creación del entorno virtual de python
-- [x] Inicialización del repositorio local
+  - [x] Creación del entorno virtual de python
+  - [x] Inicialización del repositorio local
 
 [x] Constantes inciales
 
@@ -70,9 +70,12 @@ timer = None
 
 [x] Importar la libreria
 
-- [x] [Documentación de la libreria tkinder](https://docs.python.org/es/3/library/tk.html)
+    - [x] [Documentación de la libreria tkinder](https://docs.python.org/es/3/library/tk.html)
 
-[ ] Especificar funciones y su logica
+- [ ] Crar diferentes vistas
+  - [🏃‍♂️] Vista del Home
+  - [ ] Vista de configuraciones
+- [ ] Especificar funciones y su logica
 
-- [ ] funcion de inicion (start)
-- [ ] funcion de reinicio (restart)
+  - [x] funcion de inicion (start)
+  - [ ] funcion de reinicio (restart)
